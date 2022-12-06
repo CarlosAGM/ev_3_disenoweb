@@ -80,6 +80,15 @@ buttonElimnar.style.borderRadius = '4px'
 buttonElimnar.onclick = () => eliminar()
 cajaDivUser.appendChild(buttonElimnar)
 
+  //Creación botón intrucción
+let buttonInstruccion = document.createElement('button')
+buttonInstruccion.innerText = 'Instrucción'
+buttonInstruccion.style.backgroundColor = '#FFF557'
+buttonInstruccion.style.border = '4px solid #817A00'
+buttonInstruccion.style.borderRadius = '4px'
+buttonInstruccion.onclick = () => instruccion()
+cajaDivUser.appendChild(buttonInstruccion)
+
 //Div
 const cajaDiv = document.createElement('div')
 cajaDiv.style.display ='flex'
@@ -209,5 +218,15 @@ eliminar = () => {
   console.log(alumnos)
   }
     
+}
+
+instruccion = () => {
+  alert(`
+  "Modo de uso"
+  1.- Llene el campo 'Nombre', 'Apellidos' y 'Edad'.
+  2.- Click en "Ingresar", para añadir alumno al registro.
+  3.- Click en "Elimnar", para  borrar todos los campos de la tabla.
+  4.- Al inferior de la tabla se muestra al alumnos de mayor edad ingresado.
+  `)
 }
 
