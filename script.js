@@ -40,6 +40,7 @@ cajaDivUser.appendChild(nombre)
 const cajaNombre = document.createElement("input")
 cajaNombre.setAttribute('placeholder', 'Ej. Carlos')
 cajaNombre.id = 'cajaNombre'
+cajaNombre.className = 'allInputs'
 cajaDivUser.appendChild(cajaNombre)
 saltoLinea(cajaDivUser)
 
@@ -50,6 +51,7 @@ cajaDivUser.appendChild(apellido)
 const cajaApellido = document.createElement("input")
 cajaApellido.setAttribute('placeholder', 'Ej. Agüero Marquizani')
 cajaApellido.id = 'cajaApellido'
+cajaApellido.className = 'allInputs'
 cajaDivUser.appendChild(cajaApellido)
 saltoLinea(cajaDivUser)
   //Input donde el usuario ingresa la Edad
@@ -60,6 +62,7 @@ const cajaEdad = document.createElement("input")
 cajaEdad.setAttribute('placeholder', 'Ej. 25')
 cajaEdad.setAttribute('type', 'number')
 cajaEdad.id = 'cajaEdad'
+cajaEdad.className = 'allInputs'
 cajaDivUser.appendChild(cajaEdad)
 saltoLinea(cajaDivUser)
   //Creación botón agregar
@@ -198,6 +201,7 @@ alumnos.forEach(i => {
   }
 
 })
+limpiarInputs()
 
 }
 
@@ -217,7 +221,16 @@ eliminar = () => {
   })
   console.log(alumnos)
   }
+  limpiarInputs()
     
+}
+
+limpiarInputs = () => {
+  const limpiarInputs = document.querySelectorAll('.allInputs')
+  limpiarInputs.forEach(i =>{
+  i.value = ""
+  console.log("Entramos el limpiar input")
+})
 }
 
 instruccion = () => {
@@ -226,7 +239,7 @@ instruccion = () => {
   1.- Llene el campo 'Nombre', 'Apellidos' y 'Edad'.
   2.- Click en "Ingresar", para añadir alumno al registro.
   3.- Click en "Elimnar", para  borrar todos los campos de la tabla.
-  4.- Al inferior de la tabla se muestra al alumnos de mayor edad ingresado.
+  4.- Al inferior de la tabla se muestra al alumno de mayor edad ingresado.
   `)
 }
 
